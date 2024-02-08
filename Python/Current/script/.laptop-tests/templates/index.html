@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>DEV. Env. Tests</title>
+
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="header-container">
+        <span>WEBSITE HEADER</span>
+      </div>
+    </header>
+
+    <div class="forms-div">
+      <form class="student-infos" action="/process_data" method="POST">
+        <p> 🏫 Student Informations 🏫 </p>
+        <p> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ </p>
+        <input
+          type="text"
+          name="student_name"
+          placeholder="Student name:"
+          required
+        />
+        <!-- <input type="text" name="student_grade" placeholder="Student grade:" required  > -->
+        <!-- <input type="text" name="student_age" placeholder="Student age:" required  > -->
+        <button type="submit">OK</button>
+      </form>
+    </div>
+  </body>
+</html>
