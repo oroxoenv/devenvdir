@@ -1,4 +1,5 @@
 import os
+import json
 import time
 import requests
 
@@ -6,8 +7,8 @@ import polars as pl
 
 from icecream import ic
 from abc import (
+    abstractmethod,
     ABC,
-    abstractmethod
 )
 
 
@@ -16,12 +17,21 @@ class Utils:
     def __init__(
         self
     ) -> None:
+        self.data_path: str = 'datas/'
+
+
+    def get_dir( self ):
         ...
 
 
-    def to_PolarsDataFrame( self, data: dict ) -> None:
+    def to_PolarsDataFrame( self, data: dict ) -> pl.DataFrame:
         df = pl.DataFrame( data = data )
         print( df )
+        return df
+
+
+    def to_JSONFile( self, json_struct: dict ):
+        ...
 
 
     def convert_to_json(self, data: dict ) -> bool | None:
@@ -34,6 +44,16 @@ class Utils:
         ic( debug )
         for content in listing_dir:
             print( content )
+            if self.data_path == content:
+                debug: str = f'Folder { content } already exists!'
+                ic( debug )
+            else:
+                debug: str = f'Folder { content } was not found!'
+                ic( debug )
+                time.sleep( 1.5 )
+                info: str = f'Creating a new { self.data_path } folder in current directory...'
+                ic( info )
+                os.mkdir( path = self.data_path )
 
 
 
@@ -73,9 +93,8 @@ class DoRequestsBase( ABC ):
 class DoRequests( DoRequestsBase ):
     def __init__(
         self,
-        api: str = 'https://narutodb.xyz/api'
     ) -> None:
-        self.api: str = api
+        self.api: str = 'https://narutodb.xyz/api'
         self.utils = Utils()
 
     def check_status( self ) -> bool:
