@@ -1,37 +1,26 @@
-/* @font-face {
-   font-family: MuseoSans;
-   src: url(https://github.com/benaston/old-w/blob/master/fonts/museo-sans-500.woff);
-} */
-
 * {
     margin: 0;
     padding: 0;
-    /* width: 100%; */
-    /* height: 100%; */
+    /* color: white; */
     box-sizing: border-box;
 }
 
 body {
-    margin: 0;
+    margin:0;
     padding: 0;
     position: relative;
     border: 2px solid #ff0000;
-    /* background: transparent; */
-    background-repeat: no-repeat;
-    background-image: linear-gradient( #000228 19%, #0080be );
-    width: 100vw;
-    height: 100vh;
+    background-color:#252246f1;
 }
 
 header {
     width: 100%;
     height: 80px;
     color: white;
-    font-size: 25px;
-    font-family: '';
     position: relative;
     border: 2px solid #7fff00;
-    /* background-color: #e95c36e3; */
+    background-color: #e95c36e3;
+    font-size: 25px;
 }
 
 .header-container {
@@ -64,11 +53,9 @@ header {
     font-family: 'Courier New', Courier, monospace;
 }
 
-.forms-div input {
-    padding: 0;
-}
-
 .forms-div button {
     display: flex;
-    margin: 10px auto;
+    /* padding: 15px; */
+    /* justify-content: center; */
 }
+
